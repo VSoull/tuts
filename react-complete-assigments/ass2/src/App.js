@@ -5,9 +5,9 @@ import './App.css';
 
 class App extends Component {
   state = {
-    inputText: 'one',
-    numberChars: 3,
-    charList: ['o', 'n', 'e']
+    inputText: '',
+    numberChars: 0,
+    charList: []
   };
 
   numberCharsHandler = event => {
@@ -49,14 +49,9 @@ class App extends Component {
     );
     let iterator = 0;
 
-    let singleCharComponent = (
-      <div>
-        {this.state.charList.map((item, index) => {
-          console.log(index);
-          return <CharComponent letter={item} key={iterator++} click={this.deletePosition.bind(this, index)} />;
-        })}
-      </div>
-    );
+    let singleCharComponent = this.state.charList.map((item, index) => {
+      return <CharComponent letter={item} key={iterator++} click={this.deletePosition.bind(this, index)} />;
+    });
 
     return (
       <div className="App">
