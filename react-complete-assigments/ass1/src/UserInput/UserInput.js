@@ -3,7 +3,7 @@ import './UserInput.css';
 
 const userInput = props => (
   <div className="userInput">
-    <input className="userText" type="text" onChange={props.changed} value={props.userName} />
+    <input className="userText" type="text" onChange={props.changed} value={props.name} />
   </div>
 );
 

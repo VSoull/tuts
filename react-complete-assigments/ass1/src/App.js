@@ -17,10 +17,8 @@ class App extends Component {
       <div className="App">
         <UserOutput userName={this.state.userName} />
         <UserOutput userName={this.state.userName} />
-        <UserOutput userName={this.state.userName} />
-        <UserOutput userName={this.state.userName} />
-        <UserOutput userName={this.state.userName} />
-        <UserInput changed={this.changeUserNameHandler.bind(this)} userName={this.state.userName} />
+        {/* <UserInput changed={this.changeUserNameHandler} userName={this.state.userName.bind(this)} /> */}
+        <UserInput changed={this.changeUserNameHandler} name={this.state.userName} />
       </div>
     );
   }

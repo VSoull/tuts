@@ -20,14 +20,11 @@ class App extends Component {
 
   deletePosition = index => {
     const newList = [...this.state.charList];
-    console.log('test' + newList);
     newList.splice(index, 1);
 
-    const newInputText = newList.join('');
-
     this.setState({
-      inputText: newInputText,
-      numberChars: newInputText.length,
+      inputText: newList.join(''),
+      numberChars: newList.join('').length,
       charList: newList
     });
   };
