@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import classes from './Modal.css';
 import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.show !== this.props.show;
+    return nextProps.show !== this.props.show || nextProps.children !== this.props.c;
   }
 
   componentWillUpdate() {
@@ -12,7 +12,7 @@ class Modal extends Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <Backdrop show={this.props.show} clicked={this.props.modalClosed} />
         <div
           className={classes.Modal}
@@ -23,7 +23,7 @@ class Modal extends Component {
         >
           {this.props.children}
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
